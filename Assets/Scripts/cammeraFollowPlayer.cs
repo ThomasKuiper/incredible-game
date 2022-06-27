@@ -5,6 +5,7 @@ using UnityEngine;
 public class cammeraFollowPlayer : MonoBehaviour
 {
     public Transform player;
+    //the amount the camera will lag behind the player
     public float smooth;
     public Vector3 offset;
 
