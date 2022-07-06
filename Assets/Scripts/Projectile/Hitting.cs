@@ -19,10 +19,10 @@ public class Hitting : MonoBehaviour
         {
             collision.gameObject.GetComponent<Health>().takeDamage(damage);
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerStats.playerStats.DealDamage(damage);
-        }
+ //       if (collision.gameObject.CompareTag("Player"))
+ //       {
+ //           PlayerStats.playerStats.DealDamage(damage);
+ //       }
         Destroy(gameObject);
     }
 }

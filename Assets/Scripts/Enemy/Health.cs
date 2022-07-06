@@ -24,10 +24,7 @@ public class Health : MonoBehaviour
         healthBar.SetActive(true);
         currentHealth -= damage;
         healthBarSlider.value = (currentHealth/startingHealth);
-        if(currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        CheckDeath();
     }
 
     public void HealCharacter(float heal)

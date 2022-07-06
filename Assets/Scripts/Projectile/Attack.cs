@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
     void ThrowKunai()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = mousePos - playerPos;
+        Vector2 direction = (mousePos - playerPos).normalized ;
         //coordinates to make sure the kunai spawns outside of the hitbox of the player
         float adjustX = direction.normalized.x * colliderRad;
         float adjustY = direction.normalized.y * colliderRad;
