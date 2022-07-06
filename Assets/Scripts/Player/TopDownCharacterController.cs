@@ -44,6 +44,7 @@ namespace Cainos.PixelArtTopDown_Basic
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
 
+            // problem: goes faster the faster your frame rate is
             GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
     }

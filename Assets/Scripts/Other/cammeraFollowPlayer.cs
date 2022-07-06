@@ -9,7 +9,7 @@ public class cammeraFollowPlayer : MonoBehaviour
     public float smooth;
     public Vector3 offset;
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(player != null)
         {
