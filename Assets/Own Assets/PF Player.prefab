@@ -185,7 +185,7 @@ MonoBehaviour:
   kunaiPrefab: {fileID: 9055572153020888406, guid: 0402b44b66a02f94397a2aad7dccae93,
     type: 3}
   cam: {fileID: 0}
-  kunaiSpeed: 1
+  kunaiSpeed: 100
 --- !u!1 &1743056796966556944
 GameObject:
   m_ObjectHideFlags: 0

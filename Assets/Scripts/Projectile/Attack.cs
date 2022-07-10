@@ -26,15 +26,22 @@ public class Attack : MonoBehaviour
 
     void ThrowKunai()
     {
-        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - playerPos).normalized ;
-        //coordinates to make sure the kunai spawns outside of the hitbox of the player
-        float adjustX = direction.normalized.x * colliderRad;
-        float adjustY = direction.normalized.y * colliderRad;
-        Vector3 spawnPos = playerPos + new Vector3(adjustX, adjustY);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        GameObject kunai = Instantiate(kunaiPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, angle)));
-        Rigidbody2D rb = kunai.GetComponent<Rigidbody2D>();
-        rb.AddForce(direction * kunaiSpeed, ForceMode2D.Impulse);
+            Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mousePos - playerPos).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            GameObject spell = Instantiate(kunaiPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+            spell.GetComponent<Rigidbody2D>().velocity = direction * kunaiSpeed;
+            //spell.GetComponent<EnemySpell>().damage = Random.Range(minDamage, maxDamage);
+
+        /*     Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+             Vector2 direction = (mousePos - playerPos).normalized;
+             //coordinates to make sure the kunai spawns outside of the hitbox of the player
+             float adjustX = direction.normalized.x * colliderRad;
+             float adjustY = direction.normalized.y * colliderRad;
+             Vector3 spawnPos = playerPos + new Vector3(adjustX, adjustY);
+             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+             GameObject kunai = Instantiate(kunaiPrefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, angle)));
+             Rigidbody2D rb = kunai.GetComponent<Rigidbody2D>();
+             rb.AddForce(direction * kunaiSpeed, ForceMode2D.Impulse);*/
     }
 }

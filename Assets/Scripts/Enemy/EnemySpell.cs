@@ -9,11 +9,10 @@ public class EnemySpell : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy")
+        if (collision.tag != "Enemy" && collision.tag != "EnemySpell" && collision.tag != "PlayerSpell")
         {
             if (collision.tag == "Player")
             {
-                print("hit");
                 PlayerStats.playerStats.DealDamage(damage);
             }
             Destroy(gameObject);

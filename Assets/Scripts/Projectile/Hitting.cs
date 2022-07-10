@@ -1,7 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public class Hitting : MonoBehaviour
+{
 
+    public float damage;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Player" && collision.tag != "EnemySpell" && collision.tag != "PlayerSpell")
+        {
+            if (collision.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<Health>().takeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
+    }
+/*
 public class Hitting : MonoBehaviour
 {
     private float damage;
@@ -13,16 +29,14 @@ public class Hitting : MonoBehaviour
         bc2d = gameObject.GetComponent<BoxCollider2D>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<Health>().takeDamage(damage);
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("PlayerSpell")) {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<Health>().takeDamage(damage);
+            }
+            Destroy(gameObject);
         }
- //       if (collision.gameObject.CompareTag("Player"))
- //       {
- //           PlayerStats.playerStats.DealDamage(damage);
- //       }
-        Destroy(gameObject);
-    }
+    }*/
 }
