@@ -430,7 +430,7 @@ PrefabInstance:
     - target: {fileID: 5998410828095225131, guid: 17d4c5243e5e3864283b2ec3ec4057b1,
         type: 3}
       propertyPath: kunaiSpeed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17d4c5243e5e3864283b2ec3ec4057b1, type: 3}
